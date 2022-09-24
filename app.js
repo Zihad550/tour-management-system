@@ -11,7 +11,7 @@ app.use(cors());
 const toursRoute = require('./routes/tours.route');
 
 // root route
-app.length("/", (req, res) => {
+app.get("/", (req, res) => {
     res.send("Welcome to tour management system");
 })
 

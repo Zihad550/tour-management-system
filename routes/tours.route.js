@@ -1,8 +1,11 @@
 const express = require('express');
+const { getAllTours } = require('../controllers/tours.controller');
 
 
 const router = express.Router();
 
 
 
-router.router('/').get().post()
+router.route('/').get(getAllTours)
+
+module.exports = router;
