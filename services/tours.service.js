@@ -9,3 +9,10 @@ exports.addTourService = async(tour) => {
     const result = await Tour.create(tour);
     return result;
 }
+
+exports.getTourByIdService = async(id) => {
+    const tour = await Tour.findById(id);
+    tour.views = tour.views + 1;
+    await tour.save();
+    return tour;
+}
