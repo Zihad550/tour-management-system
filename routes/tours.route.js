@@ -1,11 +1,13 @@
 const express = require('express');
-const { getAllTours } = require('../controllers/tours.controller');
+const { getAllTours, addTour } = require('../controllers/tours.controller');
 
 
 const router = express.Router();
 
 
 
-router.route('/').get(getAllTours)
+router.route('/')
+.get(getAllTours)
+.post(addTour)
 
 module.exports = router;

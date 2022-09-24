@@ -4,18 +4,18 @@ const mongoose = require('mongoose');
 const tourSchema = mongoose.Schema({
     name: {
         type: String,
-        required: true,
+        required: [true, 'Tour name not provided'],
         trim: true,
         minLength: 3,
         maxLength: 50,
     },
     description: {
         type: String,
-        required: true,
+        required: [true, 'Tour description not provided'],
     },
     price: {
         type: Number,
-        required: true,
+        required: [true, 'Tour price not provided'],
         min: 0,
     },
     views: {
@@ -24,13 +24,9 @@ const tourSchema = mongoose.Schema({
     },
     img: {
         type: String,
-        required: true,
+        required: [true, 'Tour image link not provided'],
     },
-    price: {
-        type: Number,
-        required: true,
-        min: 0,
-    }
+   
 
 })
 
