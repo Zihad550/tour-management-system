@@ -18,7 +18,11 @@ exports.getTourByIdService = async(id) => {
 }
 
 exports.updateTourByIdService = async(id, data) => {
-    
     const result = await Tour.updateOne({_id: id}, {$set: data}, {runValidators: true});
     return result;
+}
+
+exports.getTopThreeTrendingTourService = async() => {
+    const tours = await Tour.find().sort({views: -1}).limit(3);
+    return tours;
 }
