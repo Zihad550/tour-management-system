@@ -16,3 +16,9 @@ exports.getTourByIdService = async(id) => {
     await tour.save();
     return tour;
 }
+
+exports.updateTourByIdService = async(id, data) => {
+    
+    const result = await Tour.updateOne({_id: id}, {$set: data}, {runValidators: true});
+    return result;
+}
