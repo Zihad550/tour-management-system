@@ -22,7 +22,12 @@ exports.updateTourByIdService = async(id, data) => {
     return result;
 }
 
-exports.getTopThreeTrendingTourService = async() => {
+exports.getTrendingToursService = async() => {
     const tours = await Tour.find().sort({views: -1}).limit(3);
     return tours;
+}
+
+exports.getCheapestToursService = async() => {
+ const tours = await Tour.find().sort({price: -1}).limit(3);
+ return tours;
 }

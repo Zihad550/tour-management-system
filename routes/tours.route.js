@@ -1,10 +1,11 @@
 const express = require('express');
-const { getAllTours, addTour, getTourById, updateTourById, getTopThreeTrendingTour } = require('../controllers/tours.controller');
+const { getAllTours, addTour, getTourById, updateTourById, getTrendingTours, getCheapestTours} = require('../controllers/tours.controller');
 
 
 const router = express.Router();
 
-router.get('/trending', getTopThreeTrendingTour)
+router.get('/trending', getTrendingTours)
+router.get('/cheapest', getCheapestTours)
 
 
 router.route('/')
